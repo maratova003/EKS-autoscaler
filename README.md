@@ -1,25 +1,12 @@
-Set Up Cluster Autoscaler for EKS Cluster 
 # Set Up Cluster Autoscaler for EKS Cluster 
 
-On AWS, Cluster Autoscaler utilizes Amazon EC2 Auto Scaling Groups to manage node groups. Cluster Autoscaler typically runs as a Deployment in your cluster.
+
 On AWS, Cluster Autoscaler utilizes Amazon EC2 Auto Scaling Groups to manage node groups. Cluster Autoscaler typically runs as a `Deployment` in your cluster.
 
-Prerequisites/requirements: 
-Cluster Autoscaler requires Kubernetes v1.3.0 or greater. 
-kubectl is a command-line tool for interacting with Kubernetes clusters. You can install kubectl by following the steps in the Kubernetes documentation.
-Connect to the EKS cluster by running aws eks update-kubeconfig –name <cluster name> This will update the kubectl configuration file with the necessary authentication credentials. 
+
 ## Prerequisites/requirements: 
 Cluster Autoscaler requires Kubernetes v1.3.0 or greater.
 
-
-Create OIDC Federated Authentication
-OIDC federated authentication allows your service to assume an IAM role and interact with AWS services without having to store credentials as environment variables. Create an IAM OIDC identity provider for your cluster with the AWS Management Console using the documentation 
-`kubectl` is a command-line tool for interacting with Kubernetes clusters. You can install **kubectl** by following the steps in the Kubernetes documentation [Install and Set up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
-
-Create a policy 
-
-Create an IAM role for your service accounts in the console.
-Connect to the EKS cluster by running `aws eks update-kubeconfig –name <cluster name>`. This will update the kubectl configuration file with the necessary authentication credentials. 
 
 ## Permissions
 Cluster Autoscaler requires the ability to examine and modify EC2 Auto Scaling
